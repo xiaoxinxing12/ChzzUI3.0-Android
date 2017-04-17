@@ -33,6 +33,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="bindingRefresh" />
+
+            <Button
+                android:id="@+id/but_coordinator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="coordinator" />
         </LinearLayout>
     </org.chzz.widget.CHZZLoadDataLayout>
 </LinearLayout>

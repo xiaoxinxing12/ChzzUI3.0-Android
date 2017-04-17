@@ -1,4 +1,4 @@
-package org.chzz.demo.ui;
+package org.chzz.demo.ui.activity;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
@@ -29,7 +29,7 @@ public class BindingRefreshActivity extends BaseActivity implements CHZZRefreshL
     List<TestData> list;
 
     @Override
-    protected void init() {
+    protected void initView() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_refresh);
 
     }

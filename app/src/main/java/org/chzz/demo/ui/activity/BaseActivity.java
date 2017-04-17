@@ -1,4 +1,4 @@
-package org.chzz.demo.ui;
+package org.chzz.demo.ui.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -21,11 +21,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mApp = App.getInstance();
         initData();
-        init();
+        initView();
         setListener();
     }
 
-    protected abstract void init();
+    protected abstract void initView();
 
     protected abstract void setListener();
 

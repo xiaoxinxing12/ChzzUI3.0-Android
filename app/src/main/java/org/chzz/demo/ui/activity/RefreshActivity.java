@@ -1,4 +1,4 @@
-package org.chzz.demo.ui;
+package org.chzz.demo.ui.activity;
 
 import android.os.Handler;
 import android.os.Message;
@@ -65,7 +65,7 @@ public class RefreshActivity extends BaseActivity implements CHZZRefreshLayout.C
     };
 
     @Override
-    protected void init() {
+    protected void initView() {
         setContentView(R.layout.common_refresh);
         ButterKnife.bind(this);
         mLoadLayout.setStatus(CHZZLoadDataLayout.LOADING);

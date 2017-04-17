@@ -8,9 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import org.chzz.demo.ui.BindingRefreshActivity;
-import org.chzz.demo.ui.CustomActivity;
-import org.chzz.demo.ui.RefreshActivity;
+import org.chzz.demo.ui.activity.BindingRefreshActivity;
+import org.chzz.demo.ui.activity.CoordinatorActivity;
+import org.chzz.demo.ui.activity.CustomActivity;
+import org.chzz.demo.ui.activity.RefreshActivity;
 import org.chzz.widget.CHZZLoadDataLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -53,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, BindingRefreshActivity.class));
+            }
+        });
+        Button coordinator = (Button) findViewById(R.id.but_coordinator);
+        coordinator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, CoordinatorActivity.class));
             }
         });
     }

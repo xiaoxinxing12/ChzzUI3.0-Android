@@ -1,4 +1,4 @@
-package org.chzz.demo.ui;
+package org.chzz.demo.ui.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

@@ -17,9 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.CustomActivity" />
-        <activity android:name=".ui.RefreshActivity"/>
-        <activity android:name=".ui.BindingRefreshActivity"/>
+        <activity android:name=".ui.activity.CustomActivity" />
+        <activity android:name=".ui.activity.RefreshActivity"/>
+        <activity android:name=".ui.activity.BindingRefreshActivity"/>
+        <activity android:theme="@style/AppTheme" android:name=".ui.activity.CoordinatorActivity"/>
     </application>
 
 </manifest>

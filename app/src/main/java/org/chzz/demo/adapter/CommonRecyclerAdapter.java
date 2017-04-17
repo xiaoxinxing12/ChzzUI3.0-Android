@@ -48,6 +48,8 @@ public class CommonRecyclerAdapter extends CHZZRecyclerViewAdapter {
         this.foot = footView;
     }
 
+
+
     @Override
     public int getItemViewType(int position) {
         //判断Item使用哪种布局  return 的int和item_layout Id对应。
