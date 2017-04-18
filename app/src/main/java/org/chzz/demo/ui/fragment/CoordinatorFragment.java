@@ -1,9 +1,12 @@
 package org.chzz.demo.ui.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.design.widget.AppBarLayout;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import org.chzz.adapter.CHZZDivider;
@@ -12,6 +15,7 @@ import org.chzz.adapter.CHZZViewHolderHelper;
 import org.chzz.demo.R;
 import org.chzz.demo.adapter.CommonRecyclerAdapter;
 import org.chzz.demo.bean.TestData;
+import org.chzz.demo.ui.activity.CoordinatorActivity;
 import org.chzz.refresh.CHZZRefreshLayout;
 import org.chzz.widget.CHZZLoadDataLayout;
 
@@ -26,7 +30,7 @@ import butterknife.ButterKnife;
  * Created by copy on 2017/4/17.
  */
 
-public class CoordinatorFragment extends BaseFragment implements CHZZRefreshLayout.CHZZRefreshLayoutDelegate, CHZZRecyclerViewAdapter.IFillDataListener{
+public class CoordinatorFragment extends BaseFragment implements CHZZRefreshLayout.CHZZRefreshLayoutDelegate, CHZZRecyclerViewAdapter.IFillDataListener {
     @Bind(R.id.rvData)
     RecyclerView mDataRv;
     @Bind(R.id.refreshLayout)
@@ -36,6 +40,14 @@ public class CoordinatorFragment extends BaseFragment implements CHZZRefreshLayo
     CommonRecyclerAdapter adapter;
     List<TestData> list;
     private int flag;
+    private AppBarLayout appBar;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        appBar = ((CoordinatorActivity) context).getAppBar();
+    }
+
     Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -56,10 +68,11 @@ public class CoordinatorFragment extends BaseFragment implements CHZZRefreshLayo
 
         }
     };
+
     @Override
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.common_refresh);
-        ButterKnife.bind(this,mContentView);
+        ButterKnife.bind(this, mContentView);
         setListener();
         mLoadLayout.setStatus(CHZZLoadDataLayout.SUCCESS);
     }
@@ -67,11 +80,12 @@ public class CoordinatorFragment extends BaseFragment implements CHZZRefreshLayo
 
     protected void setListener() {
         chzzRefreshLayout.setDelegate(this);
-        chzzRefreshLayout.setPullDownRefreshEnable(false);
+       // chzzRefreshLayout.setPullDownRefreshEnable(false);
         //设置刷新头
         chzzRefreshLayout.setRefreshViewHolder(leftRefreshViewHolder);
         //布局管理器
-        mDataRv.setLayoutManager(new GridLayoutManager(mApp, 1, GridLayoutManager.VERTICAL, false));
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(mApp, GridLayoutManager.VERTICAL, false);
+        mDataRv.setLayoutManager(layoutManager);
         mDataRv.addItemDecoration(new CHZZDivider(mApp));
         int[] itemLayout = {R.layout.item_refresh_adapter, R.layout.item_refresh_adapter1, R.layout.item_refresh_adapter3};
         adapter = new CommonRecyclerAdapter(mDataRv, R.layout.item_refresh_adapter, null, null, this, null);
@@ -83,15 +97,17 @@ public class CoordinatorFragment extends BaseFragment implements CHZZRefreshLayo
                 if (newState == RecyclerView.SCROLL_STATE_IDLE) {
                     int firstVisiblePosition = layoutManager.findFirstCompletelyVisibleItemPosition();
                     if (firstVisiblePosition == 0) {
-                        appbar.setExpanded(true, true);
+                        appBar.setExpanded(true, true);
                     }
                 }
-            }});
+            }
+        });
 
         resultData();
 
 
     }
+
     private void resultData() {
         list = new ArrayList<>();
         Random random = new Random();
@@ -115,6 +131,7 @@ public class CoordinatorFragment extends BaseFragment implements CHZZRefreshLayo
         list.add(t6);
         adapter.setData(list);
     }
+
     @Override
     public void onCHZZRefreshLayoutBeginRefreshing(CHZZRefreshLayout refreshLayout) {
         handler.sendEmptyMessageDelayed(2, 200);
@@ -126,7 +143,7 @@ public class CoordinatorFragment extends BaseFragment implements CHZZRefreshLayo
             return false;
         }
         handler.sendEmptyMessageDelayed(0, 200);
-        flag = flag+1;
+        flag = flag + 1;
         return true;
     }
 

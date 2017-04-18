@@ -3,10 +3,12 @@ package org.chzz.demo.ui.activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 import org.chzz.demo.App;
 import org.chzz.demo.R;
 import org.chzz.refresh.CHZZMoocStyleRefreshViewHolder;
+import org.chzz.widget.CHZZLoadDataLayout;
 
 /**
  * Created by copy on 2017/4/15.
@@ -14,7 +16,9 @@ import org.chzz.refresh.CHZZMoocStyleRefreshViewHolder;
 
 public abstract class BaseActivity extends AppCompatActivity {
     protected App mApp;
+    protected Toolbar toolbar;
     protected CHZZMoocStyleRefreshViewHolder leftRefreshViewHolder;
+    CHZZLoadDataLayout loadDataLayout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -5,48 +5,70 @@
     style="@style/MatchMatch.Vertical">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
         style="@style/MatchWrap"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar_layout"
             android:layout_width="match_parent"
-            android:layout_height="270dp"
+            android:layout_height="420dp"
             app:contentScrim="#46a8ba"
             app:expandedTitleMarginEnd="48dp"
             app:expandedTitleMarginStart="48dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="270dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?attr/actionBarSize"
                 android:background="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1111" />
-            </LinearLayout>
+                    android:gravity="center"
+                    android:text="1111"
+                    android:textColor="@color/colorPrimary" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_above="@+id/tv_title"
+                    android:background="@color/grad" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:text="1111"
+                    android:textColor="@color/colorPrimary" />
+            </RelativeLayout>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
-                app:layout_collapseMode="pin"
+                app:contentInsetStart="0dp"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_collapseMode="pin"
                 app:layout_scrollFlags="scroll|enterAlways">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="1111" />
-                </LinearLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="111"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/b18_font"
+                    android:textStyle="bold" />
+</RelativeLayout>
             </android.support.v7.widget.Toolbar>
 
 
@@ -55,12 +77,18 @@
         <android.support.design.widget.TabLayout
             android:id="@+id/tabLayout"
             style="@style/MatchWrap"
-            app:tabIndicatorColor="?attr/colorPrimaryDark"
-            app:tabIndicatorHeight="3dp"
+            app:tabBackground="@color/white"
+            app:tabIndicatorColor="@color/colorPrimary"
+            app:tabIndicatorHeight="2dp"
             app:tabMode="scrollable"
-            app:tabPaddingEnd="10dp"
-            app:tabTextAppearance="@style/TextAppearance.AppCompat.Subhead" />
+            app:tabSelectedTextColor="@color/colorPrimary"
+            app:tabTextColor="@color/text_color" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_above="@+id/tv_title"
+            android:background="@color/grad" />
     </android.support.design.widget.AppBarLayout>
 
     <!-- 加上app:layout_behavior="@string/appbar_scrolling_view_behavior"，使ViewPager不被AppBarLayout遮盖 -->

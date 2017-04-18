@@ -1,6 +1,7 @@
 package org.chzz.demo.ui.activity;
 
 
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -18,18 +19,24 @@ import butterknife.ButterKnife;
  */
 
 public class CoordinatorActivity extends BaseActivity {
-    private Class[] mFragmentClasses = new Class[]{CoordinatorFragment.class,CoordinatorFragment.class,CoordinatorFragment.class};
+    private Class[] mFragmentClasses = new Class[]{CoordinatorFragment.class,CoordinatorFragment.class, CoordinatorFragment.class, CoordinatorFragment.class, CoordinatorFragment.class, CoordinatorFragment.class,  CoordinatorFragment.class, CoordinatorFragment.class};
 
 
     @Bind(R.id.tabLayout)
     TabLayout tabLayout;
     @Bind(R.id.viewPager)
     ViewPager viewPager;
+    @Bind(R.id.appBar)
+    AppBarLayout appBar;
 
     @Override
     protected void initView() {
         setContentView(R.layout.activity_coordinator);
         ButterKnife.bind(this);
+    }
+
+    public AppBarLayout getAppBar() {
+        return appBar;
     }
 
     @Override
@@ -40,6 +47,7 @@ public class CoordinatorActivity extends BaseActivity {
         tabLayout.setTabsFromPagerAdapter(contentPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
     }
+
     private class ContentPagerAdapter extends FragmentStatePagerAdapter {
 
         public ContentPagerAdapter(FragmentManager fm) {
@@ -48,6 +56,7 @@ public class CoordinatorActivity extends BaseActivity {
 
         @Override
         public Fragment getItem(int position) {
+
             return Fragment.instantiate(CoordinatorActivity.this, mFragmentClasses[position].getName());
         }
 

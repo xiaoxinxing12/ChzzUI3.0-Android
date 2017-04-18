@@ -2,8 +2,6 @@ package org.chzz.demo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -11,26 +9,20 @@ import android.widget.Button;
 import org.chzz.demo.ui.activity.BindingRefreshActivity;
 import org.chzz.demo.ui.activity.CoordinatorActivity;
 import org.chzz.demo.ui.activity.CustomActivity;
+import org.chzz.demo.ui.activity.DialogActivity;
+import org.chzz.demo.ui.activity.GuideActivity;
 import org.chzz.demo.ui.activity.RefreshActivity;
 import org.chzz.widget.CHZZLoadDataLayout;
 
 public class MainActivity extends AppCompatActivity {
     CHZZLoadDataLayout loadDataLayout;
-    Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            loadDataLayout.setStatus(CHZZLoadDataLayout.SUCCESS);
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setListener();
-        loadDataLayout.setStatus(CHZZLoadDataLayout.LOADING);
-        handler.sendEmptyMessageDelayed(1, 3000);
+        loadDataLayout.setStatus(CHZZLoadDataLayout.SUCCESS);
     }
 
     private void setListener() {
@@ -61,6 +53,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, CoordinatorActivity.class));
+            }
+        });
+        Button banner = (Button) findViewById(R.id.but_banner);
+        banner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, GuideActivity.class));
+            }
+        });
+        Button dialog = (Button) findViewById(R.id.but_dialog);
+        dialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, DialogActivity.class));
             }
         });
     }
