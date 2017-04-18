@@ -26,6 +26,8 @@ import java.util.Random;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+import static org.chzz.demo.R.id.refreshLayout;
+
 /**
  * Created by copy on 2017/4/15.
  */
@@ -36,7 +38,7 @@ public class RefreshActivity extends BaseActivity implements CHZZRefreshLayout.C
     TextView tvTitle;
     @Bind(R.id.rvData)
     RecyclerView mDataRv;
-    @Bind(R.id.refreshLayout)
+    @Bind(refreshLayout)
     CHZZRefreshLayout chzzRefreshLayout;
     @Bind(R.id.loadLayout)
     CHZZLoadDataLayout mLoadLayout;
@@ -87,11 +89,12 @@ public class RefreshActivity extends BaseActivity implements CHZZRefreshLayout.C
         mDataRv.setAdapter(adapter);
         resultData();
         adapter.setOnRVItemClickListener(this);
-       // chzzRefreshLayout.setCustomHeaderView(header,true);
+        // chzzRefreshLayout.setCustomHeaderView(header,true);
 
     }
 
-    private void resultData() {
+
+    protected  void resultData() {
         list = new ArrayList<>();
         Random random = new Random();
         TestData t1 = new TestData(0, "1");
@@ -115,7 +118,6 @@ public class RefreshActivity extends BaseActivity implements CHZZRefreshLayout.C
         adapter.setData(list);
         handler.sendEmptyMessageDelayed(1, 3000);
     }
-
 
     @Override
     public void onCHZZRefreshLayoutBeginRefreshing(CHZZRefreshLayout refreshLayout) {

@@ -71,7 +71,7 @@ public class CoordinatorFragment extends BaseFragment implements CHZZRefreshLayo
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        setContentView(R.layout.common_refresh);
+        setContentView(R.layout.common_refresh_nobar);
         ButterKnife.bind(this, mContentView);
         setListener();
         mLoadLayout.setStatus(CHZZLoadDataLayout.SUCCESS);

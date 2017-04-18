@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
 
 import org.chzz.demo.App;
 import org.chzz.demo.R;
@@ -24,9 +25,14 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mApp = App.getInstance();
-        initData();
-        initView();
-        setListener();
+        try {
+            initData();
+            initView();
+            setListener();
+        } catch (Exception t) {
+            Toast.makeText(this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     protected abstract void initView();
@@ -43,4 +49,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         leftRefreshViewHolder.setUltimateColor(R.color.white);
 
     }
+
+
 }

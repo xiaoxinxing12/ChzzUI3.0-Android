@@ -4,13 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/common_toolbar" />
-
     <org.chzz.widget.CHZZLoadDataLayout
         android:id="@+id/loadLayout"
+        android:background="@color/grad"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/grad">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,14 +21,14 @@
                 android:layout_height="match_parent">
 
                 <android.support.v7.widget.RecyclerView
-                    android:id="@+id/rvData"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:scrollbarSize="3dp"
                     android:scrollbarStyle="outsideOverlay"
                     android:scrollbarThumbVertical="@color/colorPrimary"
-                    android:scrollbars="vertical">
+                    android:scrollbarSize="3dp"
+                    android:scrollbars="vertical"
+                    android:id="@+id/rvData"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
 
                 </android.support.v7.widget.RecyclerView>
             </org.chzz.refresh.CHZZRefreshLayout>
