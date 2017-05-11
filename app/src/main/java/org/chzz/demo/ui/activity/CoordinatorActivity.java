@@ -11,9 +11,6 @@ import android.support.v4.view.ViewPager;
 import org.chzz.demo.R;
 import org.chzz.demo.ui.fragment.CoordinatorFragment;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-
 /**
  * Created by copy on 2017/4/17.
  */
@@ -22,17 +19,17 @@ public class CoordinatorActivity extends BaseActivity {
     private Class[] mFragmentClasses = new Class[]{CoordinatorFragment.class,CoordinatorFragment.class, CoordinatorFragment.class, CoordinatorFragment.class, CoordinatorFragment.class, CoordinatorFragment.class,  CoordinatorFragment.class, CoordinatorFragment.class};
 
 
-    @Bind(R.id.tabLayout)
+
     TabLayout tabLayout;
-    @Bind(R.id.viewPager)
+
     ViewPager viewPager;
-    @Bind(R.id.appBar)
+
     AppBarLayout appBar;
 
     @Override
     protected void initView() {
         setContentView(R.layout.activity_coordinator);
-        ButterKnife.bind(this);
+
     }
 
     public AppBarLayout getAppBar() {

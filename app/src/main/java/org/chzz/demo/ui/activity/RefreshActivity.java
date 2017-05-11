@@ -23,24 +23,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-
-import static org.chzz.demo.R.id.refreshLayout;
-
 /**
  * Created by copy on 2017/4/15.
  */
 
 public class RefreshActivity extends BaseActivity implements CHZZRefreshLayout.CHZZRefreshLayoutDelegate, CHZZRecyclerViewAdapter.IFillDataListener, CHZZOnRVItemClickListener {
 
-    @Bind(R.id.tv_title)
+
     TextView tvTitle;
-    @Bind(R.id.rvData)
+
     RecyclerView mDataRv;
-    @Bind(refreshLayout)
+
     CHZZRefreshLayout chzzRefreshLayout;
-    @Bind(R.id.loadLayout)
     CHZZLoadDataLayout mLoadLayout;
     CommonRecyclerAdapter adapter;
     List<TestData> list;
@@ -69,7 +63,6 @@ public class RefreshActivity extends BaseActivity implements CHZZRefreshLayout.C
     @Override
     protected void initView() {
         setContentView(R.layout.common_refresh);
-        ButterKnife.bind(this);
         mLoadLayout.setStatus(CHZZLoadDataLayout.LOADING);
 
     }

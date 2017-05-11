@@ -11,46 +11,58 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <org.chzz.downmenu.DropDownMenu
+            android:id="@+id/dropDownMenu"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <Button
-                android:id="@+id/but_customView"
+            <LinearLayout
+                android:id="@id/mFilterContentView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="自定义View" />
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/but_dialog"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="dialog" />
+                <Button
+                    android:id="@+id/but_customView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="自定义View" />
 
-            <Button
-                android:id="@+id/but_Refresh"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Refresh" />
+                <Button
+                    android:id="@+id/but_dialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="dialog" />
 
-            <Button
-                android:id="@+id/but_bindingRefresh"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="bindingRefresh" />
+                <Button
+                    android:id="@+id/but_Refresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Refresh" />
 
-            <Button
-                android:id="@+id/but_banner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="banner" />
+                <Button
+                    android:id="@+id/but_bindingRefresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="bindingRefresh" />
 
-            <Button
-                android:id="@+id/but_coordinator"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="coordinator" />
-        </LinearLayout>
+                <Button
+                    android:id="@+id/but_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="banner" />
+
+                <Button
+                    android:id="@+id/but_coordinator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="coordinator" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="更新后4444..." />
+            </LinearLayout>
+        </org.chzz.downmenu.DropDownMenu>
     </org.chzz.widget.CHZZLoadDataLayout>
 </LinearLayout>

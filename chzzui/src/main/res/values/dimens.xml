@@ -38,4 +38,27 @@
     <dimen name="text_title">18sp</dimen>
     <dimen name="common_circle_width">3dp</dimen>
     <dimen name="progress_circle_radius">34dp</dimen>
+
+    <item name="banner_indicatorId" type="id" />
+    <item name="banner_pointContainerId" type="id" />
+    <integer name="animation_default_duration">300</integer>
+    <integer name="height_40">40</integer>
+
+    <dimen name="dragView_textSize">14sp</dimen>
+    <dimen name="dragView_padding">14dp</dimen>
+    <dimen name="drag_iv_width_height">40dp</dimen>
+    <dimen name="drag_margin_5">5dp</dimen>
+    <dimen name="drag_padding_10">10dp</dimen>
+    <dimen name="drop_textSize">14dp</dimen>
+
+    <item name="fixedTabIndicator" type="id" />
+    <item name="mFilterContentView" type="id" />
+
+    <item type="id" name="expandable_text"/>
+    <item type="id" name="expand_collapse"/>
+
+    <dimen name="spinner_textSize">14sp</dimen>
+
+    <dimen name="three_grid_unit">10dp</dimen>
+    <dimen name="one_and_a_half_grid_unit">12dp</dimen>
 </resources>

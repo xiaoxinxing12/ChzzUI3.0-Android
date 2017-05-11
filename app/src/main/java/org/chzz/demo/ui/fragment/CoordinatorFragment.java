@@ -23,19 +23,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-
 /**
  * Created by copy on 2017/4/17.
  */
 
 public class CoordinatorFragment extends BaseFragment implements CHZZRefreshLayout.CHZZRefreshLayoutDelegate, CHZZRecyclerViewAdapter.IFillDataListener {
-    @Bind(R.id.rvData)
+
     RecyclerView mDataRv;
-    @Bind(R.id.refreshLayout)
+
     CHZZRefreshLayout chzzRefreshLayout;
-    @Bind(R.id.loadLayout)
     CHZZLoadDataLayout mLoadLayout;
     CommonRecyclerAdapter adapter;
     List<TestData> list;
@@ -72,7 +68,6 @@ public class CoordinatorFragment extends BaseFragment implements CHZZRefreshLayo
     @Override
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.common_refresh_nobar);
-        ButterKnife.bind(this, mContentView);
         setListener();
         mLoadLayout.setStatus(CHZZLoadDataLayout.SUCCESS);
     }

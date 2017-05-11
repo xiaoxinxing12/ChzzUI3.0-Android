@@ -18,6 +18,14 @@
     <color name="button_text_color">#FFFFFF</color>
     <color name="gray_btn_bg_color">#D0D0D0</color>
     <color name="gray_btn_bg_pressed_color">#B6B6B6</color>
-
+    <color name="black_p50">#7f000000</color>
     <color name="red_btn_bg_color">#DD6B55</color>
+
+    <color name="gray_e7e7e7">#e7e7e7</color>
+    <color name="b_c_fafafa">#fafafa</color>
+    <color name="blue_4285f4">#3da1ff</color>
+    <color name="black_5a626d">#5a626d</color>
+
+    <color name="light_gray">#fff5f5f5</color>
+    <color name="darker_gray">#e5e5e5</color>
 </resources>
