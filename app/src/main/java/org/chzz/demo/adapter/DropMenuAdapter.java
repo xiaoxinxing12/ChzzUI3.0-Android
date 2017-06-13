@@ -3,6 +3,8 @@ package org.chzz.demo.adapter;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import org.chzz.demo.model.MenuEntity;
 import org.chzz.downmenu.adapter.MenuAdapter;
@@ -78,6 +80,7 @@ public class DropMenuAdapter implements MenuAdapter {
     }
 
     private View createSingleListView(final int position, final String code, List<MenuEntity.ListEntity> lists) {
+
         SingleListView<MenuEntity.ListEntity> singleListView = new SingleListView<MenuEntity.ListEntity>(mContext)
 
                 .adapter(new SimpleTextAdapter<MenuEntity.ListEntity>(null, mContext) {
@@ -105,8 +108,13 @@ public class DropMenuAdapter implements MenuAdapter {
             list.add(entity.getTitle());
         }
         singleListView.setList(lists, -1);
-
-        return singleListView;
+        TextView t=new TextView(mContext);
+        t.setText("1111");
+        LinearLayout linearLayout=new LinearLayout(mContext);
+        linearLayout.setOrientation(LinearLayout.VERTICAL);
+        linearLayout.addView(t);
+        linearLayout.addView(singleListView);
+        return linearLayout;
     }
 
 

@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import org.chzz.demo.adapter.DropMenuAdapter;
 import org.chzz.demo.model.MenuEntity;
+import org.chzz.demo.ui.activity.AssessmentFragmentNew;
 import org.chzz.demo.ui.activity.BindingRefreshActivity;
 import org.chzz.demo.ui.activity.CoordinatorActivity;
 import org.chzz.demo.ui.activity.CustomActivity;
@@ -82,6 +83,13 @@ public class MainActivity extends AppCompatActivity implements DropMenuAdapter.O
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, DialogActivity.class));
+            }
+        });
+        Button drag= (Button) findViewById(R.id.but_drag);
+        drag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AssessmentFragmentNew.class));
             }
         });
         setLeaveTypeId();

@@ -25,6 +25,7 @@
         <activity android:name=".ui.activity.CoordinatorActivity" />
         <activity android:name=".ui.activity.DialogActivity" />
         <activity android:name=".ui.activity.GuideActivity" />
+        <activity android:name=".ui.activity.AssessmentFragmentNew"/>
     </application>
 
 </manifest>
