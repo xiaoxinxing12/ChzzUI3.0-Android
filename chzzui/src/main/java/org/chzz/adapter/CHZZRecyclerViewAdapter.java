@@ -38,7 +38,8 @@ public class CHZZRecyclerViewAdapter<M> extends RecyclerView.Adapter<CHZZRecycle
     protected CHZZOnItemChildCheckedChangeListener mOnItemChildCheckedChangeListener;
     protected CHZZOnRVItemClickListener mOnRVItemClickListener;
     protected CHZZOnRVItemLongClickListener mOnRVItemLongClickListener;
-
+    //禁止复用
+    private boolean setIsRecyclable = true;
     protected RecyclerView mRecyclerView;
     //头部 底部
     private View mHeadViews, mFootViews;
@@ -49,6 +50,7 @@ public class CHZZRecyclerViewAdapter<M> extends RecyclerView.Adapter<CHZZRecycle
     private ItemChildListener mItemChildListener;
     private int[] itemLayout;
 
+
     public CHZZRecyclerViewAdapter(RecyclerView recyclerView, int itemLayoutId, IFillDataListener fillDataListener, ItemChildListener itemChildListener) {
         mRecyclerView = recyclerView;
         mContext = mRecyclerView.getContext();
@@ -56,6 +58,16 @@ public class CHZZRecyclerViewAdapter<M> extends RecyclerView.Adapter<CHZZRecycle
         mData = new ArrayList<>();
         this.iFillDataListener = fillDataListener;
         this.mItemChildListener = itemChildListener;
+    }
+
+    public CHZZRecyclerViewAdapter(RecyclerView recyclerView, int itemLayoutId, IFillDataListener fillDataListener, ItemChildListener itemChildListener, boolean setIsRecyclable) {
+        mRecyclerView = recyclerView;
+        mContext = mRecyclerView.getContext();
+        mItemLayoutId = itemLayoutId;
+        mData = new ArrayList<>();
+        this.iFillDataListener = fillDataListener;
+        this.mItemChildListener = itemChildListener;
+        this.setIsRecyclable = setIsRecyclable;
     }
 
     public CHZZRecyclerViewAdapter(RecyclerView recyclerView, int itemLayoutId, View headView, View footView, IFillDataListener fillDataListener, ItemChildListener itemChildListener) {
@@ -70,6 +82,19 @@ public class CHZZRecyclerViewAdapter<M> extends RecyclerView.Adapter<CHZZRecycle
         this.mItemChildListener = itemChildListener;
     }
 
+    public CHZZRecyclerViewAdapter(RecyclerView recyclerView, int itemLayoutId, View headView, View footView, IFillDataListener fillDataListener, ItemChildListener itemChildListener, boolean setIsRecyclable) {
+        mRecyclerView = recyclerView;
+        mContext = mRecyclerView.getContext();
+        mItemLayoutId = itemLayoutId;
+        mData = new ArrayList<>();
+        mHeadViews = headView;
+        mFootViews = footView;
+        FootView = mFootViews;
+        this.iFillDataListener = fillDataListener;
+        this.mItemChildListener = itemChildListener;
+        this.setIsRecyclable = setIsRecyclable;
+    }
+
     public CHZZRecyclerViewAdapter(RecyclerView recyclerView, int[] itemLayout, View headView, View footView, IFillDataListener fillDataListener, ItemChildListener itemChildListener) {
         mRecyclerView = recyclerView;
         mContext = mRecyclerView.getContext();
@@ -80,6 +105,19 @@ public class CHZZRecyclerViewAdapter<M> extends RecyclerView.Adapter<CHZZRecycle
         FootView = mFootViews;
         this.iFillDataListener = fillDataListener;
         this.mItemChildListener = itemChildListener;
+    }
+
+    public CHZZRecyclerViewAdapter(RecyclerView recyclerView, int[] itemLayout, View headView, View footView, IFillDataListener fillDataListener, ItemChildListener itemChildListener, boolean setIsRecyclable) {
+        mRecyclerView = recyclerView;
+        mContext = mRecyclerView.getContext();
+        this.itemLayout = itemLayout;
+        mData = new ArrayList<>();
+        mHeadViews = headView;
+        mFootViews = footView;
+        FootView = mFootViews;
+        this.iFillDataListener = fillDataListener;
+        this.mItemChildListener = itemChildListener;
+        this.setIsRecyclable = setIsRecyclable;
     }
 
     /**
@@ -133,6 +171,8 @@ public class CHZZRecyclerViewAdapter<M> extends RecyclerView.Adapter<CHZZRecycle
                     viewHolder.getViewHolderHelper().setOnItemChildLongClickListener(mOnItemChildLongClickListener);
                     viewHolder.getViewHolderHelper().setOnItemChildCheckedChangeListener(mOnItemChildCheckedChangeListener);
                     setItemChildListener(viewHolder.getViewHolderHelper());
+                    if (!setIsRecyclable)
+                        viewHolder.setIsRecyclable(setIsRecyclable);
                     return viewHolder;
                 }
             }
@@ -148,6 +188,8 @@ public class CHZZRecyclerViewAdapter<M> extends RecyclerView.Adapter<CHZZRecycle
             viewHolder.getViewHolderHelper().setOnItemChildCheckedChangeListener(mOnItemChildCheckedChangeListener);
             setItemChildListener(viewHolder.getViewHolderHelper());
         }
+        if (!setIsRecyclable)
+            viewHolder.setIsRecyclable(setIsRecyclable);
         return viewHolder;
     }
 

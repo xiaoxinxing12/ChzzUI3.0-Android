@@ -93,6 +93,7 @@ public class CHZZDragView extends ViewGroup {
     public CHZZDragView(Context context, boolean isMore, boolean isDrag) {
         this(context, null);
         this.isMore = isMore;
+        this.isDrag=isDrag;
     }
 
     public boolean isDrag() {
