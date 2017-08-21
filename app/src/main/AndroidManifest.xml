@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.chzz.demo">
-<uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name=".SampleApplication"
         android:allowBackup="true"
@@ -25,7 +27,28 @@
         <activity android:name=".ui.activity.CoordinatorActivity" />
         <activity android:name=".ui.activity.DialogActivity" />
         <activity android:name=".ui.activity.GuideActivity" />
-        <activity android:name=".ui.activity.AssessmentFragmentNew"/>
+        <activity android:name=".ui.activity.AssessmentFragmentNew" />
+        <activity
+            android:name=".test.OnSaveInstanceStateActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true" />
+
+        <activity
+            android:name=".test.LaunchModelA" android:exported="true"
+            android:launchMode="standard" />
+        <activity
+            android:name=".test.LaunchModelB"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".test.LaunchModelC"
+            android:launchMode="standard" />
+        <provider
+            android:authorities="org.chzz.demo.provider"
+            android:permission="org.chzz.PROVIDER"
+            android:process=":provider"
+            android:name=".test.MyContentProvider"/>
+
+        <activity android:name=".ui.activity.TestActivity" android:exported="true"/>
     </application>
 
 </manifest>

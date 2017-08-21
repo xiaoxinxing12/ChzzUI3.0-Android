@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/common_margin_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关闭" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="打赏" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/gap_line" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="@dimen/common_padding_5"
+        android:text="真的很棒" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/common_padding_20"
+        android:stretchColumns="*">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="1dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/common_margin_10"
+                android:background="@drawable/selector_btn_test"
+                android:gravity="center"
+                android:padding="@dimen/common_margin_10"
+
+                android:text="normal0" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/common_margin_10"
+                android:layout_marginRight="@dimen/common_margin_10"
+                android:background="@drawable/selector_btn_test"
+                android:gravity="center"
+                android:padding="@dimen/common_margin_10"
+                android:text="normal1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/common_margin_10"
+                android:layout_marginRight="@dimen/common_margin_10"
+                android:background="@drawable/selector_btn_test"
+                android:gravity="center"
+                android:padding="@dimen/common_margin_10"
+                android:text="normal2" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_margin_10"
+            android:paddingBottom="1dp"
+            android:paddingLeft="1dp"
+            android:paddingRight="1dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/common_margin_10"
+                android:background="@drawable/selector_btn_test"
+                android:gravity="center"
+                android:padding="@dimen/common_margin_10"
+
+                android:text="normal0" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/common_margin_10"
+                android:layout_marginRight="@dimen/common_margin_10"
+                android:background="@drawable/selector_btn_test"
+                android:gravity="center"
+                android:padding="@dimen/common_margin_10"
+                android:text="normal1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/common_margin_10"
+                android:layout_marginRight="@dimen/common_margin_10"
+                android:background="@drawable/selector_btn_test"
+                android:gravity="center"
+                android:padding="@dimen/common_margin_10"
+                android:text="normal2" />
+
+        </TableRow>
+    </TableLayout>
+
+    <EditText
+        android:layout_gravity="center_horizontal"
+        android:maxWidth="200dp"
+        android:hint="其他金额"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginTop="@dimen/common_margin_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="你打赏的金额将被赠与给该内容作者" />
+<TextView
+    android:layout_marginTop="@dimen/common_margin_10"
+    android:background="@drawable/selector_btn_test"
+    android:padding="@dimen/common_padding_10"
+    android:gravity="center"
+    android:text="去打赏"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+
+</LinearLayout>

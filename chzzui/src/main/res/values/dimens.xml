@@ -72,4 +72,7 @@
     <dimen name="pickerview_topbar_btn_textsize">16sp</dimen>
     <dimen name="pickerview_topbar_title_textsize">21sp</dimen>
     <dimen name="pickerview_textsize">16sp</dimen>
+
+    <dimen name="search_icon_padding">12dp</dimen>
+    <dimen name="search_view_text_padding">65dp</dimen>
 </resources>

@@ -28,6 +28,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         try {
             initData();
             initView();
+            initView(savedInstanceState);
             setListener();
         } catch (Exception t) {
             Toast.makeText(this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
@@ -36,7 +37,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected abstract void initView();
+    protected  void initView(@Nullable Bundle savedInstanceState){
 
+    }
     protected abstract void setListener();
 
     private void initData() {

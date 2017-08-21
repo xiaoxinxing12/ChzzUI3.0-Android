@@ -15,4 +15,6 @@
     <string name="pickerview_minutes">分</string>
     <string name="pickerview_seconds">秒</string>
     <bool name="pickerview_customTextSize">true</bool>
+
+    <string name="search_hint">搜索</string>
 </resources>
